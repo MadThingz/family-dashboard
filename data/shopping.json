@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "name": "Milk",
+      "checked": false
+    },
+    {
+      "name": "Bread",
+      "checked": false
+    },
+    {
+      "name": "Eggs",
+      "checked": true
+    },
+    {
+      "name": "Cheese",
+      "checked": false
+    },
+    {
+      "name": "Butter",
+      "checked": false
+    }
+  ]
+}
