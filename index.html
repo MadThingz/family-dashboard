@@ -22,6 +22,46 @@
       Two mount points (weather-content / clock-content) inside one
       card, matching the mockup's single combined header line.
     -->
+
+    async function loadShopping() {
+  try {
+    const response = await fetch("data/shopping.json");
+    const data = await response.json();
+
+    const container = document.getElementById("shopping-content");
+    container.innerHTML = "";
+
+    data.items.forEach(item => {
+      const li = document.createElement("p");
+      li.textContent = `${item.checked ? "✔️" : "⬜"} ${item.name}`;
+      container.appendChild(li);
+    });
+  } catch (err) {
+    document.getElementById("shopping-content").innerHTML =
+      "<p class='card__empty'>Failed to load shopping list.</p>";
+  }
+}
+
+    async function loadTides() {
+  try {
+    const response = await fetch("data/tides.json");
+    const data = await response.json();
+
+    const container = document.getElementById("tides-content");
+    container.innerHTML = "";
+
+    data.tides.forEach(tide => {
+      const p = document.createElement("p");
+      p.textContent = `${tide.type} — ${tide.time} (${tide.height_m}m)`;
+      container.appendChild(p);
+    });
+  } catch (err) {
+    document.getElementById("tides-content").innerHTML =
+      "<p class='card__empty'>Failed to load tide times.</p>";
+  }
+}
+
+    
     <section class="card overview-card" aria-label="Weather and time">
       <div class="card__body">
         <div id="weather-content">
@@ -35,7 +75,7 @@
          will each be added here as their own <section class="card">,
          one feature at a time. -->
   </main>
-
+  
   <script src="js/app.js"></script>
 </body>
 </html>
