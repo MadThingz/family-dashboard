@@ -150,6 +150,39 @@ function renderShopping(shopping) {
 }
 
 // -------------------------------------------------------------------------
+// Feature: Tide Times
+// -------------------------------------------------------------------------
+
+async function loadTides() {
+  const tides = await fetchData("tides.json");
+  renderTides(tides);
+}
+
+function renderTides(tides) {
+  const container = document.getElementById("tides-list");
+  if (!container) return;
+
+  if (!tides || !tides.tides || tides.tides.length === 0) {
+    container.innerHTML = `<p class="card__empty">No tide data</p>`;
+    return;
+  }
+
+  const html = tides.tides
+    .map(
+      (tide) => `
+        <li class="tide-item">
+          <span class="tide-item__type">${tide.type}</span>
+          <span class="tide-item__time">${tide.time}</span>
+          <span class="tide-item__height">${tide.height_m}m</span>
+        </li>
+      `
+    )
+    .join("");
+
+  container.innerHTML = `<ul class="tide-list">${html}</ul>`;
+}
+
+// -------------------------------------------------------------------------
 // Init
 // -------------------------------------------------------------------------
 
@@ -157,6 +190,7 @@ function init() {
   renderHeaderDate();
   loadOverview();
   loadShopping();
+  loadTides();
 }
 
 document.addEventListener("DOMContentLoaded", init);
