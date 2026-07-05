@@ -1,14 +1,13 @@
-name: Update Weather
+name: Update Data
 
 on:
   schedule:
-    # Run every hour at the top of the hour
-    - cron: '0 * * * *'
-  # Also allow manual trigger from GitHub
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
-  update-weather:
+  update-data:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,9 +20,12 @@ jobs:
       - name: Run weather update
         run: cd python && python3 weather.py
       
+      - name: Run tides update
+        run: cd python && python3 tides.py
+      
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add data/weather.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update weather data" && git push)
+          git add data/weather.json data/tides.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update weather and tide data" && git push)
