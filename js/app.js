@@ -10,7 +10,7 @@
 
 async function fetchData(filename) {
   try {
-    const response = await fetch(`data/${filename}`, { cache: "no-store" });
+    const response = await fetch(`data/${filename}?v=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`${filename} responded with ${response.status}`);
     }
