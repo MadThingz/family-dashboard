@@ -1,0 +1,9 @@
+{
+  "location": "Bideford, England",
+  "temperature_c": 19,
+  "condition": "Partly Cloudy",
+  "icon": "partly-cloudy",
+  "high_c": 21,
+  "low_c": 13,
+  "updated_at": "2026-07-05T10:46:00Z"
+}
