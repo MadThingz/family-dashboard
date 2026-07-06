@@ -153,11 +153,6 @@ function renderShopping(shopping) {
 // Feature: Tide Times
 // -------------------------------------------------------------------------
 
-async function loadTides() {
-  const tides = await fetchData("tides.json");
-  renderTides(tides);
-}
-
 function renderTides(tides) {
   const container = document.getElementById("tides-list");
   if (!container) return;
@@ -167,19 +162,35 @@ function renderTides(tides) {
     return;
   }
 
-  const html = tides.tides
-    .map(
-      (tide) => `
-        <li class="tide-item">
-          <span class="tide-item__type">${tide.type}</span>
-          <span class="tide-item__time">${tide.time}</span>
-          <span class="tide-item__height">${tide.height_m}m</span>
-        </li>
-      `
-    )
-    .join("");
+  const highs = tides.tides.filter(t => t.type === "🔼");
+  const lows = tides.tides.filter(t => t.type === "🔽");
 
-  container.innerHTML = `<ul class="tide-list">${html}</ul>`;
+  const html = `
+    <div class="tides-summary">
+      <div class="tide-summary-item">
+        <span class="tide-emoji">🔼</span>
+        <div class="tide-info">
+          <div class="tide-label">High Tide</div>
+          <div class="tide-time">${highs[0]?.time || "—"}</div>
+          <div class="tide-height">${highs[0]?.height_m || "—"}m</div>
+        </div>
+      </div>
+      <div class="tide-summary-item">
+        <span class="tide-emoji">🔽</span>
+        <div class="tide-info">
+          <div class="tide-label">Low Tide</div>
+          <div class="tide-time">${lows[0]?.time || "—"}</div>
+          <div class="tide-height">${lows[0]?.height_m || "—"}m</div>
+        </div>
+      </div>
+      <div class="tide-range">
+        <div class="tide-label">Tidal Range</div>
+        <div class="tide-range-value">${tides.tidal_range_m || "—"}m</div>
+      </div>
+    </div>
+  `;
+
+  container.innerHTML = html;
 }
 
 // -------------------------------------------------------------------------
