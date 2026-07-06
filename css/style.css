@@ -217,6 +217,63 @@ button {
   text-decoration: line-through;
 }
 
+.tides-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.tide-summary-item {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tide-summary-item:last-of-type {
+  border-bottom: none;
+}
+
+.tide-emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.tide-info {
+  flex: 1;
+}
+
+.tide-label {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.tide-time {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.tide-height {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+}
+
+.tide-range {
+  grid-column: 1 / -1;
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.tide-range-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
 @media (min-width: 640px) {
   .page {
     padding: var(--space-2xl) var(--space-lg) var(--space-2xl);
