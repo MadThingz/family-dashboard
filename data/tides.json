@@ -1,0 +1,156 @@
+{
+  "location": "Westward Ho!/Bideford",
+  "tides": [
+    {
+      "type": "Low",
+      "time": "04:35",
+      "height_m": 1.44
+    },
+    {
+      "type": "High",
+      "time": "10:53",
+      "height_m": 7.07
+    },
+    {
+      "type": "Low",
+      "time": "16:49",
+      "height_m": 1.57
+    },
+    {
+      "type": "High",
+      "time": "23:14",
+      "height_m": 7.26
+    },
+    {
+      "type": "Low",
+      "time": "05:19",
+      "height_m": 1.58
+    },
+    {
+      "type": "High",
+      "time": "11:39",
+      "height_m": 6.89
+    },
+    {
+      "type": "Low",
+      "time": "17:37",
+      "height_m": 1.76
+    },
+    {
+      "type": "High",
+      "time": "00:03",
+      "height_m": 7.04
+    },
+    {
+      "type": "Low",
+      "time": "06:11",
+      "height_m": 1.75
+    },
+    {
+      "type": "High",
+      "time": "12:33",
+      "height_m": 6.72
+    },
+    {
+      "type": "Low",
+      "time": "18:35",
+      "height_m": 1.93
+    },
+    {
+      "type": "High",
+      "time": "01:01",
+      "height_m": 6.85
+    },
+    {
+      "type": "Low",
+      "time": "07:12",
+      "height_m": 1.88
+    },
+    {
+      "type": "High",
+      "time": "13:37",
+      "height_m": 6.63
+    },
+    {
+      "type": "Low",
+      "time": "19:42",
+      "height_m": 2.02
+    },
+    {
+      "type": "High",
+      "time": "02:09",
+      "height_m": 6.76
+    },
+    {
+      "type": "Low",
+      "time": "08:22",
+      "height_m": 1.91
+    },
+    {
+      "type": "High",
+      "time": "14:48",
+      "height_m": 6.7
+    },
+    {
+      "type": "Low",
+      "time": "20:56",
+      "height_m": 1.93
+    },
+    {
+      "type": "High",
+      "time": "03:23",
+      "height_m": 6.88
+    },
+    {
+      "type": "Low",
+      "time": "09:34",
+      "height_m": 1.77
+    },
+    {
+      "type": "High",
+      "time": "16:00",
+      "height_m": 7.0
+    },
+    {
+      "type": "Low",
+      "time": "22:09",
+      "height_m": 1.64
+    },
+    {
+      "type": "High",
+      "time": "04:34",
+      "height_m": 7.2
+    },
+    {
+      "type": "Low",
+      "time": "10:42",
+      "height_m": 1.46
+    },
+    {
+      "type": "High",
+      "time": "17:05",
+      "height_m": 7.46
+    },
+    {
+      "type": "Low",
+      "time": "23:15",
+      "height_m": 1.21
+    },
+    {
+      "type": "High",
+      "time": "05:36",
+      "height_m": 7.63
+    },
+    {
+      "type": "Low",
+      "time": "11:42",
+      "height_m": 1.07
+    },
+    {
+      "type": "High",
+      "time": "18:03",
+      "height_m": 7.98
+    }
+  ],
+  "updated_at": "2026-07-06T17:00:00Z"
+}
